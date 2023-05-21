@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvutsc1ty64v7"]
+
+[ext_resource type="Script" uid="uid://dnwtxxsu8hene" path="res://scenes/start_screen/start_screen.gd" id="1_dn1by"]
+[ext_resource type="Texture2D" uid="uid://bfy7euer8bsgs" path="res://assets/knife9.png" id="2_wsdqa"]
+[ext_resource type="StyleBox" uid="uid://b2c05l3xk7ymc" path="res://styles/button_active.tres" id="3_vc06n"]
+[ext_resource type="Texture2D" uid="uid://dl8yjyw3eu6tm" path="res://assets/gift-ico.png" id="4_c0p56"]
+[ext_resource type="StyleBox" uid="uid://cq04a3jvr2y4l" path="res://styles/button.stylebox" id="4_vc06n"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dn1by")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 110
+text = "Knifes and Apples"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_wsdqa")
+stretch_mode = 5
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.69117, 0.284185, 1, 1)
+theme_override_colors/font_focus_color = Color(0.69117, 0.284185, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.69117, 0.284185, 1, 1)
+theme_override_colors/font_hover_color = Color(0.69117, 0.284185, 1, 1)
+theme_override_styles/normal = ExtResource("4_vc06n")
+theme_override_styles/pressed = ExtResource("3_vc06n")
+theme_override_styles/hover = ExtResource("3_vc06n")
+text = "PLAY"
+
+[node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopButton" type="TextureButton" parent="MarginContainer/VBoxContainer/CenterContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("4_c0p56")
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer3/ShopButton" to="." method="_on_shop_button_pressed"]

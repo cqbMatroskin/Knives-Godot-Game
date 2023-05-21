@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://07a0dhjtdjr2"]
+
+[ext_resource type="Script" uid="uid://c6dljisp74c1r" path="res://elements/ui/hud/knives_counter/knives_counter.gd" id="1_2kw25"]
+
+[node name="KnivesCounter" type="VBoxContainer"]
+alignment = 2
+script = ExtResource("1_2kw25")

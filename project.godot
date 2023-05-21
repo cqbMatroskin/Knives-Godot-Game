@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="godot4-mobile-game-course"
+run/main_scene="uid://bvutsc1ty64v7"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="res://assets/target5.png"
+
+[autoload]
+
+Events="*res://core/events.gd"
+Global="*res://core/globals.gd"
+Hud="*res://elements/ui/hud/hud.tscn"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[gui]
+
+theme/custom="uid://dqlmk26yw4otr"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_render/layer_2="knife"
+2d_render/layer_3="target"
+2d_render/layer_4="apple"
+2d_physics/layer_2="knife"
+2d_physics/layer_3="target"
+2d_physics/layer_4="apple"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

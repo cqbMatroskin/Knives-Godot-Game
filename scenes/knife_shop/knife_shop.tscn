@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7b3fmspe7wr2"]
+
+[ext_resource type="StyleBox" uid="uid://hauh7kv6isnr" path="res://styles/green_line.stylebox" id="2_l7nvw"]
+[ext_resource type="Texture2D" uid="uid://cso6wdxm7tlg8" path="res://assets/knife1.png" id="3_hvw0k"]
+[ext_resource type="PackedScene" uid="uid://2sb4bas25ffj" path="res://scenes/knife_shop/shop_item/shop_item.tscn" id="4_l7nvw"]
+[ext_resource type="PackedScene" uid="uid://w32lfb1f7mta" path="res://scenes/knife_shop/unblock_button/unblock_button.tscn" id="5_hvw0k"]
+
+[node name="KnifeShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 105
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 105
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("2_l7nvw")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "CUSTOMIZE"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = ExtResource("2_l7nvw")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+texture = ExtResource("3_hvw0k")
+stretch_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = ExtResource("2_l7nvw")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="ShopItem" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem2" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem3" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem4" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem5" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem6" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem7" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem8" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="ShopItem9" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_l7nvw")]
+layout_mode = 2
+
+[node name="UnblockButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_hvw0k")]
+layout_mode = 2
