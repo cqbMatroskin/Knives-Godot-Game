@@ -17,6 +17,11 @@ var speed: float = PI
 @onready var knife_particles: CPUParticles2D = $KnifeParticles2D
 @onready var targets_particles: Array[CPUParticles2D] = [$TargetParticles2D, $TargetParticles2D2, $TargetParticles2D3]
 
+func take_damage() -> void:
+	print(Global.knives_amount)
+	if Global.knives_amount == 0:
+		explode_target()
+
 func explode_target() -> void:
 	sprite.hide()
 	items_container.hide()
@@ -30,6 +35,8 @@ func explode_target() -> void:
 	knife_particles.rotation = -rotation
 	knife_particles.emitting = true
 	tween.parallel().tween_property(knife_particles, "modulate", Color("ffffff00"),EXPLOSION_TIME)
+	await tween.finished
+	Global.change_stage(Global.current_stage + 1)
 
 ## Вращение мишени
 func _physics_process(delta: float) -> void:

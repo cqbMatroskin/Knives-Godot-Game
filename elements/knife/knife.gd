@@ -29,6 +29,7 @@ func handle_collision(collision: KinematicCollision2D) -> void:
 	if collider is Target:
 		add_knife_to_target(collider)
 		change_state(State.IDLE)
+		collider.take_damage()
 		Global.add_point()
 	if collider is Knife:
 		throw_away(collision.get_normal())

@@ -11,6 +11,7 @@ var is_hited := false
 func _on_area_2d_body_entered(body) -> void:
 	if !is_hited:
 		is_hited = true
+		Global.add_apples(1)
 		sprite.hide()
 		var tween: Tween = create_tween()
 		for part in particles:

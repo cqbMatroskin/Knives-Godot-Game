@@ -5,10 +5,12 @@ extends CanvasLayer
 @onready var score_label: Label = %ScoreLabel
 @onready var stage_label: Label = %StageLabel
 @onready var stage_counter: HBoxContainer = %StageCounter
+@onready var apples_label: Label = %ApplesLabel
 
 func _ready() -> void:
 	Events.location_changed.connect(update_hud_location)
 	Events.points_changed.connect(update_points)
+	Events.apples_amount_changed.connect(update_apples_count)
 	update_hud_location(Events.LOCATIONS.START)
 
 func _on_home_button_pressed() -> void:
@@ -46,3 +48,6 @@ func update_hud_restart() -> void:
 # Обновление счётчика очков
 func update_points(points: int) -> void:
 	score_label.text = str(points)
+
+func update_apples_count(amount: int) -> void:
+	apples_label.text = str(amount)

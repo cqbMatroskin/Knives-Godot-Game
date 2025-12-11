@@ -7,3 +7,4 @@ signal game_over
 signal points_changed(points: int)
 signal knives_amount_changed(amount: int)
 signal stage_changed(stage: Stage)
+signal apples_amount_changed(amount: int)

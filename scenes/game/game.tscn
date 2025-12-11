@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://tu8yrkwtve8e"]
+[gd_scene load_steps=4 format=3 uid="uid://tu8yrkwtve8e"]
 
 [ext_resource type="Script" uid="uid://bjucoy4a2u3lb" path="res://scenes/game/game.gd" id="1_kelw5"]
 [ext_resource type="PackedScene" uid="uid://b7gmbde8gvm04" path="res://elements/knife_spawner/knife_spawner.tscn" id="1_s00pg"]
-[ext_resource type="PackedScene" uid="uid://tgjfcms1s8d7" path="res://elements/targets/target/target.tscn" id="2_xbfvm"]
 [ext_resource type="PackedScene" uid="uid://2lbxobflufgh" path="res://elements/ui/restart_overlay.tscn" id="4_kelw5"]
 
 [node name="Game" type="Node2D"]
@@ -11,11 +10,11 @@ script = ExtResource("1_kelw5")
 [node name="KnifeSpawner" parent="." instance=ExtResource("1_s00pg")]
 position = Vector2(360, 940)
 
-[node name="Target" parent="." instance=ExtResource("2_xbfvm")]
-position = Vector2(363, 396)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(363, 540)
 
 [node name="RestartOverlay" parent="." instance=ExtResource("4_kelw5")]
 visible = false
+
+[node name="TargetPosition" type="Marker2D" parent="."]
+position = Vector2(363, 396)
