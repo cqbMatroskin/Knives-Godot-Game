@@ -7,7 +7,7 @@ const location_to_scene = {
 }
 
 const SAVE_GAME_FILE: String = "user://savegame.save"
-const SAVE_VARIABLES: Array[String] = ["apples"]
+const SAVE_VARIABLES: Array[String] = ["apples_amount"]
 
 const MAX_STAGE_APPLES: int = 3
 const MAX_STAGE_KNIVES: int = 2
@@ -22,6 +22,7 @@ var knives_amount: int = 7
 var apples_amount: int = 0
 
 func _ready() -> void:
+	load_game()
 	rng.randomize()
 	Events.location_changed.connect(on_location_changed)
 
@@ -64,4 +65,18 @@ func on_location_changed(location: Events.LOCATIONS) -> void:
 	get_tree().change_scene_to_packed(location_to_scene.get(location))
 
 func save_game() -> void:
-	pass
+	var file: FileAccess = FileAccess.open(SAVE_GAME_FILE, FileAccess.WRITE)
+	if file == null:
+		printerr("save failed with error code {0}".format([FileAccess.get_open_error()]))
+		return
+	for element in SAVE_VARIABLES:
+		file.store_var(get(element))
+		
+
+func load_game() -> void:
+	var file: FileAccess = FileAccess.open(SAVE_GAME_FILE, FileAccess.READ)
+	if file == null:
+		printerr("load failed with error code {0}".format([FileAccess.get_open_error()]))
+		return
+	for element in SAVE_VARIABLES:
+		set(element, file.get_var())

@@ -18,7 +18,6 @@ var speed: float = PI
 @onready var targets_particles: Array[CPUParticles2D] = [$TargetParticles2D, $TargetParticles2D2, $TargetParticles2D3]
 
 func take_damage() -> void:
-	print(Global.knives_amount)
 	if Global.knives_amount == 0:
 		explode_target()
 

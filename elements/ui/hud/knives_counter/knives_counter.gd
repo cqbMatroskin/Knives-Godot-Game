@@ -7,7 +7,6 @@ func _ready() -> void:
 
 
 func update_knife_counter(amount: int) -> void:
-	print_debug(get_child_count())
 	var knives_diff: int = amount - get_child_count()
 	if knives_diff > 0:
 		add_knives(knives_diff)

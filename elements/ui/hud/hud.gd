@@ -11,6 +11,7 @@ func _ready() -> void:
 	Events.location_changed.connect(update_hud_location)
 	Events.points_changed.connect(update_points)
 	Events.apples_amount_changed.connect(update_apples_count)
+	update_apples_count(Global.apples_amount)
 	update_hud_location(Events.LOCATIONS.START)
 
 func _on_home_button_pressed() -> void:

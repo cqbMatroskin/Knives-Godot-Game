@@ -9,8 +9,13 @@ var target: Target
 
 func _ready() -> void:
 	Events.game_over.connect(on_end_game)
-	Events.stage_changed.connect(place_target)
+	Events.stage_changed.connect(change_stage)
 	Global.change_stage(1)
+
+func change_stage(stage: Stage) -> void:
+	Global.save_game()
+	place_target(stage)
+	
 
 func place_target(stage: Stage) -> void:
 	if	target:
